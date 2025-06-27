@@ -1,15 +1,17 @@
 <?php
 
-namespace VendorName\Skeleton;
+declare(strict_types=1);
+
+namespace RectitudeOpen\FilamentPeople;
 
 use Filament\Contracts\Plugin;
 use Filament\Panel;
 
-class SkeletonPlugin implements Plugin
+class FilamentPeoplePlugin implements Plugin
 {
     public function getId(): string
     {
-        return 'skeleton';
+        return 'filament-people';
     }
 
     public function register(Panel $panel): void

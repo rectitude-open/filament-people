@@ -1,28 +1,26 @@
 {
-    "name": ":vendor_slug/:package_slug",
-    "description": ":package_description",
+    "name": "rectitude-open/filament-people",
+    "description": "This is my package filament-people",
     "keywords": [
         "filament",
         "filament plugin"
     ],
-    "homepage": "https://github.com/:vendor_slug/:package_slug",
+    "homepage": "https://github.com/rectitude-open/filament-people",
     "support": {
-        "issues": "https://github.com/:vendor_slug/:package_slug/issues",
-        "source": "https://github.com/:vendor_slug/:package_slug"
+        "issues": "https://github.com/rectitude-open/filament-people/issues",
+        "source": "https://github.com/rectitude-open/filament-people"
     },
     "license": "MIT",
     "authors": [
         {
-            "name": ":author_name",
-            "email": "author@domain.com",
+            "name": "Aspirant Zhang",
+            "email": "admin@aspirantzhang.com",
             "role": "Developer"
         }
     ],
     "require": {
         "php": "^8.1",
         "filament/filament": "^3.0",
-        "filament/forms": "^3.0",
-        "filament/tables": "^3.0",
         "spatie/laravel-package-tools": "^1.15.0"
     },
     "require-dev": {
@@ -36,13 +34,13 @@
     },
     "autoload": {
         "psr-4": {
-            "VendorName\\Skeleton\\": "src/",
-            "VendorName\\Skeleton\\Database\\Factories\\": "database/factories/"
+            "RectitudeOpen\\FilamentPeople\\": "src/",
+            "RectitudeOpen\\FilamentPeople\\Database\\Factories\\": "database/factories/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "VendorName\\Skeleton\\Tests\\": "tests/"
+            "RectitudeOpen\\FilamentPeople\\Tests\\": "tests/"
         }
     },
     "scripts": {
@@ -62,10 +60,10 @@
     "extra": {
         "laravel": {
             "providers": [
-                "VendorName\\Skeleton\\SkeletonServiceProvider"
+                "RectitudeOpen\\FilamentPeople\\FilamentPeopleServiceProvider"
             ],
             "aliases": {
-                "Skeleton": "VendorName\\Skeleton\\Facades\\Skeleton"
+                "FilamentPeople": "RectitudeOpen\\FilamentPeople\\Facades\\FilamentPeople"
             }
         }
     },
