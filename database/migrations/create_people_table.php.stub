@@ -8,12 +8,22 @@ return new class extends Migration
 {
     public function up()
     {
-        Schema::create('filament_people_table', function (Blueprint $table) {
-            $table->id();
+        Schema::create('people', function (Blueprint $table) {
+            $table->increments('id');
 
-            // add fields
+            $table->string('name')->default('');
+            $table->string('title')->default('');
+            $table->string('tagline', 1000)->default('');
+            $table->string('email')->default('');
+            $table->text('bio')->nullable();
+            $table->string('sidebar', 1000)->default('');
+            $table->boolean('is_published')->default(true);
+
+            $table->integer('display_order')->default(0);
+            $table->unsignedBigInteger('avatar_id')->nullable();
 
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 };
