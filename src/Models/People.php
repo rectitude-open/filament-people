@@ -21,6 +21,7 @@ use RalphJSmit\Laravel\SEO\Support\HasSEO;
  * @property string $title
  * @property string $tagline
  * @property string $email
+ * @property string $phone
  * @property string $bio
  * @property string $sidebar
  * @property bool $is_published
@@ -45,6 +46,7 @@ class People extends Model
         'title',
         'tagline',
         'email',
+        'phone',
         'bio',
         'sidebar',
         'is_published',
@@ -58,6 +60,7 @@ class People extends Model
         'title',
         'tagline',
         'email',
+        'phone',
         'bio',
         'sidebar',
         'is_published',
@@ -103,14 +106,14 @@ class People extends Model
 
     // @phpstan-ignore-next-line
     #[Scope]
-    public function active(Builder $query): void
+    public function published(Builder $query): void
     {
         $query->where('is_published', 1);
     }
 
     // @phpstan-ignore-next-line
     #[Scope]
-    public function suspended(Builder $query): void
+    public function unpublished(Builder $query): void
     {
         $query->where('is_published', 0);
     }

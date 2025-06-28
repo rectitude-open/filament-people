@@ -21,6 +21,7 @@ class PeopleFactory extends Factory
             'title' => $this->faker->jobTitle(),
             'tagline' => $this->faker->realText(1000),
             'email' => $this->faker->unique()->safeEmail(),
+            'phone' => $this->faker->phoneNumber(),
             'bio' => $this->faker->paragraph(),
             'sidebar' => $this->faker->realText(1000),
             'is_published' => $this->faker->boolean(),
