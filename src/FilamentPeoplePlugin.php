@@ -6,6 +6,8 @@ namespace RectitudeOpen\FilamentPeople;
 
 use Filament\Contracts\Plugin;
 use Filament\Panel;
+use RectitudeOpen\FilamentPeople\Filament\Pages\PeopleCategory;
+use RectitudeOpen\FilamentPeople\Filament\Resources\PeopleResource;
 
 class FilamentPeoplePlugin implements Plugin
 {
@@ -16,7 +18,17 @@ class FilamentPeoplePlugin implements Plugin
 
     public function register(Panel $panel): void
     {
-        //
+        $panel
+            ->resources([
+                config('filament-people.people.filament_resource', PeopleResource::class),
+            ])
+            ->pages([
+                config('filament-people.people_category.page', PeopleCategory::class),
+            ])
+            ->discoverClusters(
+                __DIR__ . '/Filament/Clusters',
+                'RectitudeOpen\\FilamentPeople\\Filament\\Clusters'
+            );
     }
 
     public function boot(Panel $panel): void

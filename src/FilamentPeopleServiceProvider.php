@@ -148,7 +148,7 @@ class FilamentPeopleServiceProvider extends PackageServiceProvider
     {
         return [
             'create_people_table',
-            'create_people_categories_table'
+            'create_people_categories_table',
         ];
     }
 }
