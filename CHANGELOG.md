@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.3.0](https://github.com/rectitude-open/filament-people/compare/v1.2.1...v1.3.0) (2025-06-29)
+
+
+### Features
+
+* implement getModel method to return configured model class ([312a955](https://github.com/rectitude-open/filament-people/commit/312a955560ede4e96a9405777f81aae6acc87a49))
+* rename unpublished method to draft and add ordered method for display order ([f3b38b0](https://github.com/rectitude-open/filament-people/commit/f3b38b0a2f9e4b80fbe303f68a301e75baa5fa96))
+
 ## [1.2.1](https://github.com/rectitude-open/filament-people/compare/v1.2.0...v1.2.1) (2025-06-29)
 
 
