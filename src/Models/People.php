@@ -116,9 +116,17 @@ class People extends Model
 
     // @phpstan-ignore-next-line
     #[Scope]
-    public function unpublished(Builder $query): void
+    public function draft(Builder $query): void
     {
         $query->where('is_published', 0);
+    }
+
+    // @phpstan-ignore-next-line
+    #[Scope]
+    public function ordered(Builder $query): void
+    {
+        $query->orderBy('display_order', 'desc')
+            ->orderBy('created_at', 'desc');
     }
 
     protected static function newFactory()
