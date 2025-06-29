@@ -74,6 +74,8 @@ class People extends Model
 
     protected $versionStrategy = VersionStrategy::SNAPSHOT;
 
+    protected $with = ['avatar'];
+
     public function categories()
     {
         return $this->belongsToMany(PeopleCategory::class, 'pivot_people_categories', 'people_id', 'category_id');
