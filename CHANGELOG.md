@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.2.1](https://github.com/rectitude-open/filament-people/compare/v1.2.0...v1.2.1) (2025-06-29)
+
+
+### Bug Fixes
+
+* default string value for input fields in PeopleResource ([4b8c948](https://github.com/rectitude-open/filament-people/commit/4b8c94831a382656b261073794393cba87039215))
+
 ## [1.2.0](https://github.com/rectitude-open/filament-people/compare/v1.1.0...v1.2.0) (2025-06-29)
 
 
