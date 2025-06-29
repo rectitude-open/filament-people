@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace RectitudeOpen\FilamentPeople\Models;
 
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
@@ -28,6 +29,13 @@ class PeopleCategory extends Model
         static::forceDeleted(function ($peopleCategory) {
             $peopleCategory->people()->detach();
         });
+    }
+
+    // @phpstan-ignore-next-line
+    #[Scope]
+    public function ordered(Builder $query): void
+    {
+        $query->orderBy('weight')->orderBy('created_at', 'desc');
     }
 
     protected static function newFactory()
