@@ -87,6 +87,7 @@ class PeopleResource extends Resource
             ->fileAttachmentsDisk('public')
             ->fileAttachmentsDirectory('uploads')
             ->fileAttachmentsVisibility('public')
+            ->dehydrateStateUsing(fn ($state) => $state ?? '')
             ->columnSpan('full')
             ->maxLength(1000);
 
@@ -106,9 +107,11 @@ class PeopleResource extends Resource
                         ]),
                         TextInput::make('email')
                             ->label(__('filament-people::filament-people.people.field.email'))
+                            ->dehydrateStateUsing(fn ($state) => $state ?? '')
                             ->maxLength(255),
                         TextInput::make('phone')
                             ->label(__('filament-people::filament-people.people.field.phone'))
+                            ->dehydrateStateUsing(fn ($state) => $state ?? '')
                             ->maxLength(255),
                         $bioComponent,
                         $taglineComponent,
