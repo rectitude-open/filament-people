@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.4.1](https://github.com/rectitude-open/filament-people/compare/v1.4.0...v1.4.1) (2025-06-30)
+
+
+### Bug Fixes
+
+* change visibility of query scope methods to protected ([91d7cd3](https://github.com/rectitude-open/filament-people/commit/91d7cd398ad8e5522a7b92102650ed87027d27b9))
+
 ## [1.4.0](https://github.com/rectitude-open/filament-people/compare/v1.3.0...v1.4.0) (2025-06-30)
 
 
