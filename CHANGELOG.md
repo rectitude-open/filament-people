@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.4.0](https://github.com/rectitude-open/filament-people/compare/v1.3.0...v1.4.0) (2025-06-30)
+
+
+### Features
+
+* add 'with' property to People model for eager loading avatar relationship ([f9d01be](https://github.com/rectitude-open/filament-people/commit/f9d01be4a8467d9db074dd03cc2690ed34b05938))
+* add ordered method to PeopleCategory for sorting by weight and creation date ([60ed414](https://github.com/rectitude-open/filament-people/commit/60ed414e6e337cf76d2bd30b93ea69e48a6aef35))
+
 ## [1.3.0](https://github.com/rectitude-open/filament-people/compare/v1.2.1...v1.3.0) (2025-06-29)
 
 
