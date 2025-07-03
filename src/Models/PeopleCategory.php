@@ -31,13 +31,6 @@ class PeopleCategory extends Model
         });
     }
 
-    // @phpstan-ignore-next-line
-    #[Scope]
-    public function ordered(Builder $query): void
-    {
-        $query->orderBy('weight')->orderBy('created_at', 'desc');
-    }
-
     protected static function newFactory()
     {
         return PeopleCategoryFactory::new();
