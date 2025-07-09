@@ -4,8 +4,10 @@ declare(strict_types=1);
 
 namespace RectitudeOpen\FilamentPeople;
 
+use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use RectitudeOpen\FilamentPeople\Models\People;
+use RectitudeOpen\FilamentPeople\Models\PeopleCategory;
 
 class FilamentPeople
 {
@@ -15,6 +17,14 @@ class FilamentPeople
     public function getModel(): string
     {
         return config('filament-people.people.model', People::class);
+    }
+
+    /**
+     * @return class-string<People>
+     */
+    public function getCategoryModel(): string
+    {
+        return config('filament-people.people_category.model', PeopleCategory::class);
     }
 
     /**
@@ -41,5 +51,22 @@ class FilamentPeople
         assert($people instanceof People);
 
         return $people;
+    }
+
+    /**
+     * @return Collection<int, PeopleCategory>
+     */
+    public function getCategoriesWithPeople(): Collection
+    {
+        // @phpstan-ignore-next-line
+        $categoriesWithPeople = $this->getCategoryModel()::query()
+            ->with(['people' => function ($query) {
+                $query->published()->ordered();
+            }])
+            ->ordered()
+            ->get();
+
+        /** @var Collection<int, PeopleCategory> $categoriesWithPeople */
+        return $categoriesWithPeople;
     }
 }
