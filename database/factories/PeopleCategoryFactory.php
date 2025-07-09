@@ -5,11 +5,11 @@ declare(strict_types=1);
 namespace RectitudeOpen\FilamentPeople\Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
-use RectitudeOpen\FilamentPeople\Models\PeopleCategory;
+use RectitudeOpen\FilamentPeople\Models\PersonCategory;
 
-class PeopleCategoryFactory extends Factory
+class PersonCategoryFactory extends Factory
 {
-    protected $model = PeopleCategory::class;
+    protected $model = PersonCategory::class;
 
     /**
      * Define the model's default state.

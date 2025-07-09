@@ -26,41 +26,41 @@ use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 use RalphJSmit\Filament\SEO\SEO;
 use RectitudeOpen\FilamentPeople\Filament\Clusters\PeopleCluster;
-use RectitudeOpen\FilamentPeople\Filament\Resources\PeopleResource\Pages;
-use RectitudeOpen\FilamentPeople\Models\People;
+use RectitudeOpen\FilamentPeople\Filament\Resources\PersonResource\Pages;
+use RectitudeOpen\FilamentPeople\Models\Person;
 
-class PeopleResource extends Resource
+class PersonResource extends Resource
 {
     protected static ?string $cluster = PeopleCluster::class;
 
     public static function getModel(): string
     {
-        return static::$model ?? config('filament-people.people_model', People::class);
+        return static::$model ?? config('filament-people.person.model', Person::class);
     }
 
     public static function getNavigationIcon(): string | Htmlable | null
     {
-        return static::$navigationIcon ?? config('filament-people.people.navigation_icon', 'heroicon-o-identification');
+        return static::$navigationIcon ?? config('filament-people.person.navigation_icon', 'heroicon-o-identification');
     }
 
     public static function getNavigationSort(): ?int
     {
-        return config('filament-people.people.navigation_sort', 0);
+        return config('filament-people.person.navigation_sort', 0);
     }
 
     public static function getNavigationLabel(): string
     {
-        return __('filament-people::filament-people.people.nav.label');
+        return __('filament-people::filament-people.person.nav.label');
     }
 
     public static function getNavigationGroup(): ?string
     {
-        return __('filament-people::filament-people.people.nav.group');
+        return __('filament-people::filament-people.person.nav.group');
     }
 
     public static function getNavigationBadge(): ?string
     {
-        return config('filament-people.people.navigation_badge', false)
+        return config('filament-people.person.navigation_badge', false)
                 ? (string) static::getModel()::count()
                 : '';
     }
@@ -69,21 +69,21 @@ class PeopleResource extends Resource
     {
         $editorClass = config('filament-people.editor_component_class', RichEditor::class);
         $bioComponent = $editorClass::make('bio')
-            ->label(__('filament-people::filament-people.people.field.bio'))
+            ->label(__('filament-people::filament-people.person.field.bio'))
             ->fileAttachmentsDisk('public')
             ->fileAttachmentsDirectory('uploads')
             ->fileAttachmentsVisibility('public')
             ->columnSpan('full');
 
         $taglineComponent = Textarea::make('tagline')
-            ->label(__('filament-people::filament-people.people.field.tagline'))
+            ->label(__('filament-people::filament-people.person.field.tagline'))
             ->default('')
             ->maxLength(255)
             ->columnSpan('full')
             ->dehydrateStateUsing(fn ($state) => $state ?? '');
 
         $sidebarComponent = $editorClass::make('sidebar')
-            ->label(__('filament-people::filament-people.people.field.sidebar'))
+            ->label(__('filament-people::filament-people.person.field.sidebar'))
             ->fileAttachmentsDisk('public')
             ->fileAttachmentsDirectory('uploads')
             ->fileAttachmentsVisibility('public')
@@ -97,20 +97,20 @@ class PeopleResource extends Resource
                     Grid::make()->schema([
                         Grid::make()->schema([
                             TextInput::make('name')
-                                ->label(__('filament-people::filament-people.people.field.name'))
+                                ->label(__('filament-people::filament-people.person.field.name'))
                                 ->required()
                                 ->maxLength(255),
                             TextInput::make('title')
-                                ->label(__('filament-people::filament-people.people.field.title'))
+                                ->label(__('filament-people::filament-people.person.field.title'))
                                 ->required()
                                 ->maxLength(255),
                         ]),
                         TextInput::make('email')
-                            ->label(__('filament-people::filament-people.people.field.email'))
+                            ->label(__('filament-people::filament-people.person.field.email'))
                             ->dehydrateStateUsing(fn ($state) => $state ?? '')
                             ->maxLength(255),
                         TextInput::make('phone')
-                            ->label(__('filament-people::filament-people.people.field.phone'))
+                            ->label(__('filament-people::filament-people.person.field.phone'))
                             ->dehydrateStateUsing(fn ($state) => $state ?? '')
                             ->maxLength(255),
                         $bioComponent,
@@ -118,12 +118,12 @@ class PeopleResource extends Resource
                         $sidebarComponent,
                     ])->columnSpan(['xl' => 2]),
                     Grid::make()->schema([
-                        Section::make(__('filament-people::filament-people.people.field.taxonomy'))
+                        Section::make(__('filament-people::filament-people.person.field.taxonomy'))
                             ->compact()
                             ->schema([
                                 SelectTree::make('categories')
-                                    ->label(__('filament-people::filament-people.people.field.categories'))
-                                    ->placeholder(__('filament-people::filament-people.people.info.select_categories'))
+                                    ->label(__('filament-people::filament-people.person.field.categories'))
+                                    ->placeholder(__('filament-people::filament-people.person.info.select_categories'))
                                     ->parentNullValue(-1)
                                     ->relationship('categories', 'title', 'parent_id')
                                     ->searchable()
@@ -131,7 +131,7 @@ class PeopleResource extends Resource
                                     ->columnSpanFull()
                                     ->required(),
                             ]),
-                        Section::make(__('filament-people::filament-people.people.field.avatar'))
+                        Section::make(__('filament-people::filament-people.person.field.avatar'))
                             ->compact()
                             ->schema([
                                 CuratorPicker::make('avatar_id')
@@ -141,16 +141,16 @@ class PeopleResource extends Resource
                                     ->directory('people')
                                     ->listDisplay(true),
                             ]),
-                        Section::make(__('filament-people::filament-people.people.field.meta'))
+                        Section::make(__('filament-people::filament-people.person.field.meta'))
                             ->compact()
                             ->schema([
                                 TextInput::make('slug')
-                                    ->label(__('filament-people::filament-people.people.field.slug'))
+                                    ->label(__('filament-people::filament-people.person.field.slug'))
                                     ->maxLength(255)
                                     ->inlineLabel()
                                     ->columnSpanFull(),
                                 TextInput::make('display_order')
-                                    ->label(__('filament-people::filament-people.people.field.display_order'))
+                                    ->label(__('filament-people::filament-people.person.field.display_order'))
                                     ->default(0)
                                     ->numeric()
                                     ->step(1)
@@ -158,10 +158,10 @@ class PeopleResource extends Resource
                                     ->maxLength(255)
                                     ->columnSpanFull(),
                                 ToggleButtons::make('is_published')
-                                    ->label(__('filament-people::filament-people.people.field.status'))
+                                    ->label(__('filament-people::filament-people.person.field.status'))
                                     ->options([
-                                        1 => __('filament-people::filament-people.people.field.status_published'),
-                                        0 => __('filament-people::filament-people.people.field.status_draft'),
+                                        1 => __('filament-people::filament-people.person.field.status_published'),
+                                        0 => __('filament-people::filament-people.person.field.status_draft'),
                                     ])
                                     ->default(1)
                                     ->colors([
@@ -175,17 +175,17 @@ class PeopleResource extends Resource
                                     ->inline()
                                     ->inlineLabel(),
                                 DateTimePicker::make('created_at')
-                                    ->label(__('filament-people::filament-people.people.field.created_at'))
+                                    ->label(__('filament-people::filament-people.person.field.created_at'))
                                     ->native(false)
                                     ->default(now())
                                     ->suffixIcon('heroicon-o-calendar')
                                     ->columnSpanFull()
                                     ->inlineLabel()
-                                    ->format(config('filament-people.people.datetime_format', 'Y-m-d H:i:s'))
-                                    ->displayFormat(config('filament-people.people.datetime_format', 'Y-m-d H:i:s')),
+                                    ->format(config('filament-people.person.datetime_format', 'Y-m-d H:i:s'))
+                                    ->displayFormat(config('filament-people.person.datetime_format', 'Y-m-d H:i:s')),
                             ])
                             ->collapsible(),
-                        Section::make(__('filament-people::filament-people.people.field.seo'))
+                        Section::make(__('filament-people::filament-people.person.field.seo'))
                             ->compact()
                             ->schema([
                                 SEO::make(),
@@ -201,20 +201,20 @@ class PeopleResource extends Resource
         return $table
             ->columns([
                 TextColumn::make('name')
-                    ->label(__('filament-people::filament-people.people.field.name'))
+                    ->label(__('filament-people::filament-people.person.field.name'))
                     ->searchable()
                     ->limit(50),
                 CuratorColumn::make('featured_image')
                     ->label('')
                     ->size(30),
                 TextColumn::make('categories.title')
-                    ->label(__('filament-people::filament-people.people.field.categories'))
+                    ->label(__('filament-people::filament-people.person.field.categories'))
                     ->searchable()
                     ->limit(50)
                     ->formatStateUsing(fn ($state) => implode('<br/>', explode(', ', $state)))
                     ->html(),
                 IconColumn::make('is_published')
-                    ->label(__('filament-people::filament-people.people.field.status'))
+                    ->label(__('filament-people::filament-people.person.field.status'))
                     ->icon(fn ($state): string => match ($state) {
                         1 => 'heroicon-o-check-circle',
                         0 => 'heroicon-o-x-circle',
@@ -226,18 +226,18 @@ class PeopleResource extends Resource
                         default => 'warning',
                     }),
                 TextColumn::make('created_at')
-                    ->label(__('filament-people::filament-people.people.field.created_at'))
+                    ->label(__('filament-people::filament-people.person.field.created_at'))
                     ->sortable(),
             ])->filters([
                 Tables\Filters\TrashedFilter::make(),
                 SelectFilter::make('is_published')
-                    ->label(__('filament-people::filament-people.people.field.status'))
+                    ->label(__('filament-people::filament-people.person.field.status'))
                     ->options([
-                        1 => __('filament-people::filament-people.people.field.status_published'),
-                        0 => __('filament-people::filament-people.people.field.status_draft'),
+                        1 => __('filament-people::filament-people.person.field.status_published'),
+                        0 => __('filament-people::filament-people.person.field.status_draft'),
                     ]),
                 SelectFilter::make('categories')
-                    ->label(__('filament-people::filament-people.people.field.categories'))
+                    ->label(__('filament-people::filament-people.person.field.categories'))
                     ->relationship('categories', 'title')
                     ->searchable(),
             ])->headerActions([

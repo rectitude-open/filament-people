@@ -16,7 +16,7 @@ use Overtrue\LaravelVersionable\Versionable;
 use Overtrue\LaravelVersionable\VersionStrategy;
 use RalphJSmit\Laravel\SEO\Models\SEO;
 use RalphJSmit\Laravel\SEO\Support\HasSEO;
-use RectitudeOpen\FilamentPeople\Database\Factories\PeopleFactory;
+use RectitudeOpen\FilamentPeople\Database\Factories\PersonFactory;
 
 /**
  * @property int $id
@@ -33,7 +33,7 @@ use RectitudeOpen\FilamentPeople\Database\Factories\PeopleFactory;
  * @property \Illuminate\Support\Carbon $created_at
  * @property \Illuminate\Support\Carbon $updated_at
  * @property \Illuminate\Support\Carbon|null $deleted_at
- * @property-read \Illuminate\Database\Eloquent\Collection<int, \RectitudeOpen\FilamentPeople\Models\PeopleCategory> $categories
+ * @property-read \Illuminate\Database\Eloquent\Collection<int, \RectitudeOpen\FilamentPeople\Models\PersonCategory> $categories
  * @property-read int|null $categories_count
  * @property Media|null $avatar
  * @property SEO $seo
@@ -43,13 +43,15 @@ use RectitudeOpen\FilamentPeople\Database\Factories\PeopleFactory;
  * @method static \Illuminate\Database\Eloquent\Builder|static published()
  * @method static \Illuminate\Database\Eloquent\Builder|static draft()
  */
-class People extends Model
+class Person extends Model
 {
     use HasFactory;
     use HasSEO;
     use Sluggable;
     use SoftDeletes;
     use Versionable;
+
+    protected $table = 'people';
 
     protected $fillable = [
         'name',
@@ -86,7 +88,7 @@ class People extends Model
 
     public function categories()
     {
-        return $this->belongsToMany(PeopleCategory::class, 'pivot_people_categories', 'people_id', 'category_id');
+        return $this->belongsToMany(PersonCategory::class, 'pivot_person_categories', 'people_id', 'category_id');
     }
 
     protected static function booted()
@@ -141,6 +143,6 @@ class People extends Model
 
     protected static function newFactory()
     {
-        return PeopleFactory::new();
+        return PersonFactory::new();
     }
 }

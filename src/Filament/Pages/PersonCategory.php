@@ -6,10 +6,10 @@ namespace RectitudeOpen\FilamentPeople\Filament\Pages;
 
 use Filament\Forms\Components\TextInput;
 use RectitudeOpen\FilamentPeople\Filament\Clusters\PeopleCluster;
-use RectitudeOpen\FilamentPeople\Models\PeopleCategory as TreePageModel;
+use RectitudeOpen\FilamentPeople\Models\PersonCategory as TreePageModel;
 use SolutionForest\FilamentTree\Pages\TreePage as BasePage;
 
-class PeopleCategory extends BasePage
+class PersonCategory extends BasePage
 {
     protected static ?string $cluster = PeopleCluster::class;
 
@@ -17,27 +17,27 @@ class PeopleCategory extends BasePage
 
     public static function getNavigationSort(): ?int
     {
-        return config('filament-people.people_category.navigation_sort', 2);
+        return config('filament-people.person_category.navigation_sort', 2);
     }
 
     public static function getNavigationIcon(): ?string
     {
-        return config('filament-people.people_category.navigation_icon', 'heroicon-o-rectangle-stack');
+        return config('filament-people.person_category.navigation_icon', 'heroicon-o-rectangle-stack');
     }
 
     public static function getNavigationLabel(): string
     {
-        return __('filament-people::filament-people.people_category.nav.label');
+        return __('filament-people::filament-people.person_category.nav.label');
     }
 
     public static function getNavigationGroup(): ?string
     {
-        return __('filament-people::filament-people.people_category.nav.group');
+        return __('filament-people::filament-people.person_category.nav.group');
     }
 
     public function getModel(): string
     {
-        return static::$model ?? config('filament-people.people_category.model', TreePageModel::class);
+        return static::$model ?? config('filament-people.person_category.model', TreePageModel::class);
     }
 
     protected function getActions(): array
@@ -51,7 +51,7 @@ class PeopleCategory extends BasePage
     {
         return [
             TextInput::make('title')
-                ->label(__('filament-people::filament-people.people_category.field.title'))
+                ->label(__('filament-people::filament-people.person_category.field.title'))
                 ->required()
                 ->maxLength(255)
                 ->columnSpanFull(),

@@ -9,7 +9,7 @@ return [
             'group' => 'Content',
         ],
     ],
-    'people' => [
+    'person' => [
         'nav' => [
             'label' => 'People',
             'group' => '',
@@ -38,9 +38,9 @@ return [
             'select_categories' => 'Select Categories',
         ],
     ],
-    'people_category' => [
+    'person_category' => [
         'nav' => [
-            'label' => 'People Categories',
+            'label' => 'Person Categories',
             'group' => '',
         ],
         'field' => [

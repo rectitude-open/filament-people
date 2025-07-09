@@ -6,36 +6,36 @@ namespace RectitudeOpen\FilamentPeople;
 
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
-use RectitudeOpen\FilamentPeople\Models\People;
-use RectitudeOpen\FilamentPeople\Models\PeopleCategory;
+use RectitudeOpen\FilamentPeople\Models\Person;
+use RectitudeOpen\FilamentPeople\Models\PersonCategory;
 
 class FilamentPeople
 {
     /**
-     * @return class-string<People>
+     * @return class-string<Person>
      */
     public function getModel(): string
     {
-        return config('filament-people.people.model', People::class);
+        return config('filament-people.person.model', Person::class);
     }
 
     /**
-     * @return class-string<People>
+     * @return class-string<Person>
      */
     public function getCategoryModel(): string
     {
-        return config('filament-people.people_category.model', PeopleCategory::class);
+        return config('filament-people.person_category.model', PersonCategory::class);
     }
 
     /**
      * @throws ModelNotFoundException
      */
-    public function getPublishedPersonByIdOrFail(int $id): People
+    public function getPublishedPersonByIdOrFail(int $id): Person
     {
         // @phpstan-ignore-next-line
         $people = $this->getModel()::with(['categories'])->published()->findOrFail($id);
 
-        assert($people instanceof People);
+        assert($people instanceof Person);
 
         return $people;
     }
@@ -43,18 +43,18 @@ class FilamentPeople
     /**
      * @throws ModelNotFoundException
      */
-    public function getPublishedPersonBySlugOrFail(string $slug): People
+    public function getPublishedPersonBySlugOrFail(string $slug): Person
     {
         // @phpstan-ignore-next-line
         $people = $this->getModel()::with(['categories'])->published()->withSlug($slug)->firstOrFail();
 
-        assert($people instanceof People);
+        assert($people instanceof Person);
 
         return $people;
     }
 
     /**
-     * @return Collection<int, PeopleCategory>
+     * @return Collection<int, PersonCategory>
      */
     public function getCategoriesWithPeople(): Collection
     {
@@ -66,7 +66,7 @@ class FilamentPeople
             ->ordered()
             ->get();
 
-        /** @var Collection<int, PeopleCategory> $categoriesWithPeople */
+        /** @var Collection<int, PersonCategory> $categoriesWithPeople */
         return $categoriesWithPeople;
     }
 }

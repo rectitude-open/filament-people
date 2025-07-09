@@ -7,20 +7,22 @@ namespace RectitudeOpen\FilamentPeople\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
-use RectitudeOpen\FilamentPeople\Database\Factories\PeopleCategoryFactory;
+use RectitudeOpen\FilamentPeople\Database\Factories\PersonCategoryFactory;
 use SolutionForest\FilamentTree\Concern\ModelTree;
 
-class PeopleCategory extends Model
+class PersonCategory extends Model
 {
     use HasFactory;
     use ModelTree;
     use SoftDeletes;
 
+    protected $table = 'person_categories';
+
     protected $fillable = ['title', 'parent_id', 'weight'];
 
     public function people()
     {
-        return $this->belongsToMany(People::class, 'pivot_people_categories', 'category_id', 'people_id');
+        return $this->belongsToMany(Person::class, 'pivot_person_categories', 'category_id', 'people_id');
     }
 
     protected static function booted()
@@ -32,6 +34,6 @@ class PeopleCategory extends Model
 
     protected static function newFactory()
     {
-        return PeopleCategoryFactory::new();
+        return PersonCategoryFactory::new();
     }
 }
