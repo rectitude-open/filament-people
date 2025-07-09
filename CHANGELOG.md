@@ -1,5 +1,18 @@
 # Changelog
 
+## [1.5.0](https://github.com/rectitude-open/filament-people/compare/v1.4.1...v1.5.0) (2025-07-09)
+
+
+### Features
+
+* add category model retrieval and categories with people method to FilamentPeople ([30849eb](https://github.com/rectitude-open/filament-people/commit/30849eb3a4a499e35c37ad200b51186cf09f596d))
+* enhance FilamentPeople model with published person retrieval methods by ID and slug ([6e1f102](https://github.com/rectitude-open/filament-people/commit/6e1f102745dae4802890d1c8de1c7445f1dfc69a))
+
+
+### Bug Fixes
+
+* add down method to drop 'people' table in migration ([1e966f7](https://github.com/rectitude-open/filament-people/commit/1e966f75169308cde6e666bdaf624c2dcb3f8b19))
+
 ## [1.4.1](https://github.com/rectitude-open/filament-people/compare/v1.4.0...v1.4.1) (2025-06-30)
 
 
