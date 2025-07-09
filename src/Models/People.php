@@ -14,6 +14,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Overtrue\LaravelVersionable\Versionable;
 use Overtrue\LaravelVersionable\VersionStrategy;
+use RalphJSmit\Laravel\SEO\Models\SEO;
 use RalphJSmit\Laravel\SEO\Support\HasSEO;
 use RectitudeOpen\FilamentPeople\Database\Factories\PeopleFactory;
 
@@ -34,6 +35,13 @@ use RectitudeOpen\FilamentPeople\Database\Factories\PeopleFactory;
  * @property \Illuminate\Support\Carbon|null $deleted_at
  * @property-read \Illuminate\Database\Eloquent\Collection<int, \RectitudeOpen\FilamentPeople\Models\PeopleCategory> $categories
  * @property-read int|null $categories_count
+ * @property Media|null $avatar
+ * @property SEO $seo
+ *
+ * @method static \Illuminate\Database\Eloquent\Builder|static ordered()
+ * @method static \Illuminate\Database\Eloquent\Builder|static withSlug(string $slug)
+ * @method static \Illuminate\Database\Eloquent\Builder|static published()
+ * @method static \Illuminate\Database\Eloquent\Builder|static draft()
  */
 class People extends Model
 {
