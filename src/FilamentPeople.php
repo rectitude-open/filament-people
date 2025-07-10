@@ -69,4 +69,16 @@ class FilamentPeople
         /** @var Collection<int, PersonCategory> $categoriesWithPeople */
         return $categoriesWithPeople;
     }
+
+    /**
+     * @return Collection<int, Person>
+     */
+    public function getAllPublishedPeople(): Collection
+    {
+        // @phpstan-ignore-next-line
+        $people = $this->getModel()::with(['categories'])->published()->ordered()->get();
+
+        /** @var Collection<int, Person> $people */
+        return $people;
+    }
 }
