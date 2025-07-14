@@ -137,8 +137,7 @@ class Person extends Model
     #[Scope]
     protected function ordered(Builder $query): void
     {
-        $query->orderBy('display_order', 'desc')
-            ->orderBy('created_at', 'desc');
+        $query->orderBy('display_order', 'desc')->orderBy('created_at', 'asc');
     }
 
     protected static function newFactory()
