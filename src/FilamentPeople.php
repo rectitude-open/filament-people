@@ -56,18 +56,37 @@ class FilamentPeople
     /**
      * @return Collection<int, PersonCategory>
      */
-    public function getCategoriesWithPeople(): Collection
+    public function getCategoriesWithPeople(?int $categoryId = null): Collection
     {
+        if ($categoryId) {
+            /** @var ?PersonCategory $parentCategory */
+            $parentCategory = $this->getCategoryModel()::find($categoryId);
+
+            if (! $parentCategory) {
+                return new Collection;
+            }
+
+            $descendantCategoryIds = $parentCategory->getAllDescendantIds();
+
+            if (empty($descendantCategoryIds)) {
+                return new Collection;
+            }
+
+            // @phpstan-ignore-next-line
+            return $this->getModel()::query()
+                ->whereHas('categories', function ($query) use ($descendantCategoryIds) {
+                    $query->whereIn('person_categories.id', $descendantCategoryIds);
+                })
+                ->published()
+                ->ordered()
+                ->get();
+        }
+
         // @phpstan-ignore-next-line
-        $categoriesWithPeople = $this->getCategoryModel()::query()
-            ->with(['people' => function ($query) {
-                $query->published()->ordered();
-            }])
+        return $this->getCategoryModel()::query()
+            ->with(['people' => fn ($query) => $query->published()->ordered()])
             ->ordered()
             ->get();
-
-        /** @var Collection<int, PersonCategory> $categoriesWithPeople */
-        return $categoriesWithPeople;
     }
 
     /**

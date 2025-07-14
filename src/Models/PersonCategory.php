@@ -6,6 +6,7 @@ namespace RectitudeOpen\FilamentPeople\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use RectitudeOpen\FilamentPeople\Database\Factories\PersonCategoryFactory;
 use SolutionForest\FilamentTree\Concern\ModelTree;
@@ -23,6 +24,22 @@ class PersonCategory extends Model
     public function people()
     {
         return $this->belongsToMany(Person::class, 'pivot_person_categories', 'category_id', 'people_id');
+    }
+
+    public function parent(): BelongsTo
+    {
+        return $this->belongsTo(static::class, 'parent_id');
+    }
+
+    public function getAllDescendantIds(): array
+    {
+        $descendantIds = [];
+        foreach ($this->children as $child) {
+            $descendantIds[] = $child->id;
+            $descendantIds = array_merge($descendantIds, $child->getAllDescendantIds());
+        }
+
+        return $descendantIds;
     }
 
     protected static function booted()
