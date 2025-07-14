@@ -1,5 +1,19 @@
 # Changelog
 
+## [1.6.0](https://github.com/rectitude-open/filament-people/compare/v1.5.0...v1.6.0) (2025-07-14)
+
+
+### Features
+
+* add method to retrieve all published people ([b3e7c14](https://github.com/rectitude-open/filament-people/commit/b3e7c148b5902c47572413f08f95bab5a421463a))
+* add more translations ([5851ffa](https://github.com/rectitude-open/filament-people/commit/5851ffa61c68b398f00bf4966d1848be4445ea2a))
+* enhance getCategoriesWithPeople method to support filtering by category ID ([68daf40](https://github.com/rectitude-open/filament-people/commit/68daf4064f0cad17adcf015723fe186256df058f))
+
+
+### Bug Fixes
+
+* change ordering of created_at to ascending in ordered scope ([9e00a05](https://github.com/rectitude-open/filament-people/commit/9e00a057240fd18b652083f26c803714c9cd23ae))
+
 ## [1.5.0](https://github.com/rectitude-open/filament-people/compare/v1.4.1...v1.5.0) (2025-07-09)
 
 
