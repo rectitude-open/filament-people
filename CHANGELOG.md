@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.6.1](https://github.com/rectitude-open/filament-people/compare/v1.6.0...v1.6.1) (2025-07-15)
+
+
+### Bug Fixes
+
+* avatar relation name in filament table ([7b39c60](https://github.com/rectitude-open/filament-people/commit/7b39c6031601262ad56775b567eb4fc3497a9055))
+
 ## [1.6.0](https://github.com/rectitude-open/filament-people/compare/v1.5.0...v1.6.0) (2025-07-14)
 
 
