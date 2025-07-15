@@ -204,7 +204,7 @@ class PersonResource extends Resource
                     ->label(__('filament-people::filament-people.person.field.name'))
                     ->searchable()
                     ->limit(50),
-                CuratorColumn::make('featured_image')
+                CuratorColumn::make('avatar')
                     ->label('')
                     ->size(30),
                 TextColumn::make('categories.title')
