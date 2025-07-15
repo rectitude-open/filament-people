@@ -4,10 +4,10 @@ declare(strict_types=1);
 
 namespace RectitudeOpen\FilamentPeople\Filament\Resources\PersonResource\Pages;
 
-use Filament\Resources\Pages\CreateRecord;
+use Mansoor\FilamentVersionable\RevisionsPage;
 use RectitudeOpen\FilamentPeople\Filament\Resources\PersonResource;
 
-class CreatePeople extends CreateRecord
+class PersonRevisions extends RevisionsPage
 {
     protected static string $resource = PersonResource::class;
 }

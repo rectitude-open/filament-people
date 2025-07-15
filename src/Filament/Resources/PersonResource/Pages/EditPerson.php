@@ -9,7 +9,7 @@ use Filament\Resources\Pages\EditRecord;
 use Mansoor\FilamentVersionable\Page\RevisionsAction;
 use RectitudeOpen\FilamentPeople\Filament\Resources\PersonResource;
 
-class EditPeople extends EditRecord
+class EditPerson extends EditRecord
 {
     protected static string $resource = PersonResource::class;
 

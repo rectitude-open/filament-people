@@ -266,9 +266,9 @@ class PersonResource extends Resource
     {
         return [
             'index' => Pages\ListPeople::route('/'),
-            'create' => Pages\CreatePeople::route('/create'),
-            'edit' => Pages\EditPeople::route('/{record}/edit'),
-            'revisions' => Pages\PeopleRevisions::route('/{record}/revisions'),
+            'create' => Pages\CreatePerson::route('/create'),
+            'edit' => Pages\EditPerson::route('/{record}/edit'),
+            'revisions' => Pages\PersonRevisions::route('/{record}/revisions'),
         ];
     }
 
