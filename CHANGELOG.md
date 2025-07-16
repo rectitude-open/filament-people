@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.8.0](https://github.com/rectitude-open/filament-people/compare/v1.7.0...v1.8.0) (2025-07-16)
+
+
+### Features
+
+* add person_category helper function for retrieving person categories ([39b14fd](https://github.com/rectitude-open/filament-people/commit/39b14fd0f770cf531568343f59cab9b0799216ac))
+* remove soft deletes from PersonCategory model and migration ([907552b](https://github.com/rectitude-open/filament-people/commit/907552b4dbca903e3b8704015f83b1e8571f2cbc))
+
 ## [1.7.0](https://github.com/rectitude-open/filament-people/compare/v1.6.1...v1.7.0) (2025-07-16)
 
 
