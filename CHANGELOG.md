@@ -1,5 +1,14 @@
 # Changelog
 
+## [1.7.0](https://github.com/rectitude-open/filament-people/compare/v1.6.1...v1.7.0) (2025-07-16)
+
+
+### Features
+
+* add childrenWithPeople relation for PersonCategory model ([d74435f](https://github.com/rectitude-open/filament-people/commit/d74435fc7f5ffaf7cca5f7132cfb10dd97e4cf59))
+* add getCategoryTreeWithPeople method ([37b37d3](https://github.com/rectitude-open/filament-people/commit/37b37d314d99ca02b44df27ce61ec0eba18da611))
+* add getTreeRecordTitle in person category page ([3fb1153](https://github.com/rectitude-open/filament-people/commit/3fb11536f4819cdcd5fcfaca01aac08ea12ce258))
+
 ## [1.6.1](https://github.com/rectitude-open/filament-people/compare/v1.6.0...v1.6.1) (2025-07-15)
 
 
