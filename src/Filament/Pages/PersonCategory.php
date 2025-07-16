@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace RectitudeOpen\FilamentPeople\Filament\Pages;
 
 use Filament\Forms\Components\TextInput;
+use Illuminate\Database\Eloquent\Model;
 use RectitudeOpen\FilamentPeople\Filament\Clusters\PeopleCluster;
 use RectitudeOpen\FilamentPeople\Models\PersonCategory as TreePageModel;
 use SolutionForest\FilamentTree\Pages\TreePage as BasePage;
@@ -56,6 +57,21 @@ class PersonCategory extends BasePage
                 ->maxLength(255)
                 ->columnSpanFull(),
         ];
+    }
+
+    /**
+     * @param  TreePageModel|null  $record
+     */
+    public function getTreeRecordTitle(?Model $record = null): string
+    {
+        if (! $record) {
+            return '';
+        }
+
+        $id = $record->id ? " [ID: {$record->id}] " : '';
+        $title = $record->title ?? '';
+
+        return "$id $title";
     }
 
     protected function hasDeleteAction(): bool
