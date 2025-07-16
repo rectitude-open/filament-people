@@ -7,6 +7,8 @@ namespace RectitudeOpen\FilamentPeople\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use RectitudeOpen\FilamentPeople\Database\Factories\PersonCategoryFactory;
 use SolutionForest\FilamentTree\Concern\ModelTree;
@@ -21,7 +23,7 @@ class PersonCategory extends Model
 
     protected $fillable = ['title', 'parent_id', 'weight'];
 
-    public function people()
+    public function people(): BelongsToMany
     {
         return $this->belongsToMany(Person::class, 'pivot_person_categories', 'category_id', 'people_id');
     }
@@ -29,6 +31,13 @@ class PersonCategory extends Model
     public function parent(): BelongsTo
     {
         return $this->belongsTo(static::class, 'parent_id');
+    }
+
+    public function childrenWithPeople(): HasMany
+    {
+        return $this->children()
+            ->with(['people' => fn ($query) => $query->published()->ordered()])
+            ->with('childrenWithPeople');
     }
 
     public function getAllDescendantIds(): array
