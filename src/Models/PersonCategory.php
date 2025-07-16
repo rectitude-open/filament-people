@@ -9,7 +9,6 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasMany;
-use Illuminate\Database\Eloquent\SoftDeletes;
 use RectitudeOpen\FilamentPeople\Database\Factories\PersonCategoryFactory;
 use SolutionForest\FilamentTree\Concern\ModelTree;
 
@@ -17,7 +16,6 @@ class PersonCategory extends Model
 {
     use HasFactory;
     use ModelTree;
-    use SoftDeletes;
 
     protected $table = 'person_categories';
 
@@ -53,7 +51,7 @@ class PersonCategory extends Model
 
     protected static function booted()
     {
-        static::forceDeleted(function ($peopleCategory) {
+        static::deleted(function ($peopleCategory) {
             $peopleCategory->people()->detach();
         });
     }
