@@ -34,7 +34,6 @@ use RectitudeOpen\FilamentPeople\Database\Factories\PersonFactory;
  * @property \Illuminate\Support\Carbon $updated_at
  * @property \Illuminate\Support\Carbon|null $deleted_at
  * @property-read \Illuminate\Database\Eloquent\Collection<int, \RectitudeOpen\FilamentPeople\Models\PersonCategory> $categories
- * @property-read int|null $categories_count
  * @property Media|null $avatar
  * @property SEO $seo
  *
@@ -109,7 +108,7 @@ class Person extends Model
 
     public function avatar(): BelongsTo
     {
-        return $this->belongsTo(Media::class, 'avatar_id', 'id');
+        return $this->belongsTo(config('curator.model', Media::class), 'avatar_id', 'id');
     }
 
     // @phpstan-ignore-next-line
