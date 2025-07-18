@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.8.1](https://github.com/rectitude-open/filament-people/compare/v1.8.0...v1.8.1) (2025-07-18)
+
+
+### Bug Fixes
+
+* remove categories_count property and update avatar relationship to use config ([d5b69a3](https://github.com/rectitude-open/filament-people/commit/d5b69a3dcda88f5203041e1493439fda5813b865))
+
 ## [1.8.0](https://github.com/rectitude-open/filament-people/compare/v1.7.0...v1.8.0) (2025-07-16)
 
 
