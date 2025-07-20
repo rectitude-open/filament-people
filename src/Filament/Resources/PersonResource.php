@@ -11,6 +11,7 @@ use Filament\Forms\Components\DateTimePicker;
 use Filament\Forms\Components\Grid;
 use Filament\Forms\Components\RichEditor;
 use Filament\Forms\Components\Section;
+use Filament\Forms\Components\Select;
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\ToggleButtons;
@@ -23,11 +24,13 @@ use Filament\Tables\Filters\SelectFilter;
 use Filament\Tables\Table;
 use Illuminate\Contracts\Support\Htmlable;
 use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 use RalphJSmit\Filament\SEO\SEO;
 use RectitudeOpen\FilamentPeople\Filament\Clusters\PeopleCluster;
 use RectitudeOpen\FilamentPeople\Filament\Resources\PersonResource\Pages;
 use RectitudeOpen\FilamentPeople\Models\Person;
+use RectitudeOpen\FilamentPeople\Models\PersonCategory;
 
 class PersonResource extends Resource
 {
@@ -251,8 +254,52 @@ class PersonResource extends Resource
                     Tables\Actions\DeleteBulkAction::make(),
                     Tables\Actions\ForceDeleteBulkAction::make(),
                     Tables\Actions\RestoreBulkAction::make(),
+                    Tables\Actions\BulkAction::make('replicate')
+                        ->label(__('filament-people::filament-people.person.info.duplicate_selected'))
+                        ->icon('heroicon-o-document-duplicate')
+                        ->requiresConfirmation()
+                        ->defaultColor('primary')
+                        ->form([
+                            Select::make('categories')
+                                ->label(__('filament-people::filament-people.person.field.categories'))
+                                ->options(self::generateCategoryTreeOptions())
+                                ->multiple()
+                                ->searchable()
+                                ->required(),
+                        ])
+                        ->action(function (Collection $records, array $data) {
+                            // @phpstan-ignore-next-line
+                            $records->each(function (Person $record) use ($data) {
+                                $newRecord = $record->replicate();
+                                $newRecord->save();
+
+                                $newRecord->categories()->sync($data['categories']);
+                                $attributesToCopy = $record->seo->replicate()->getAttributes();
+                                $attributesToCopy['model_id'] = $newRecord->id;
+                                $newRecord->seo()->update($attributesToCopy);
+                            });
+                        })
+                        ->deselectRecordsAfterCompletion(),
                 ]),
             ])->defaultSort('created_at', 'desc');
+    }
+
+    private static function generateCategoryTreeOptions(?int $parentId = -1, int $level = 0): array
+    {
+        $categories = PersonCategory::where('parent_id', $parentId)->ordered()->get();
+        $options = [];
+
+        foreach ($categories as $category) {
+            $prefix = $level > 0 ? str_repeat('-', $level) . ' ' : '';
+            $options[$category->id] = $prefix . $category->title;
+
+            $childrenOptions = self::generateCategoryTreeOptions($category->id, $level + 1);
+            if (! empty($childrenOptions)) {
+                $options += $childrenOptions;
+            }
+        }
+
+        return $options;
     }
 
     public static function getRelations(): array
