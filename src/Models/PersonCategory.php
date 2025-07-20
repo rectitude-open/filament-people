@@ -12,6 +12,13 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 use RectitudeOpen\FilamentPeople\Database\Factories\PersonCategoryFactory;
 use SolutionForest\FilamentTree\Concern\ModelTree;
 
+/**
+ * @property int $id
+ * @property string $title
+ * @property int $parent_id
+ * @property int $weight
+ *
+ **/
 class PersonCategory extends Model
 {
     use HasFactory;
