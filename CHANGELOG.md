@@ -1,5 +1,18 @@
 # Changelog
 
+## [1.9.0](https://github.com/rectitude-open/filament-people/compare/v1.8.1...v1.9.0) (2025-07-20)
+
+
+### Features
+
+* add bulk duplicate action with category selection in PersonResource ([24c0c79](https://github.com/rectitude-open/filament-people/commit/24c0c79ae0287f35a47872516cea84981b6c7355))
+* add translations for duplicate_selected ([e109b84](https://github.com/rectitude-open/filament-people/commit/e109b84575a053af711d967e295232f2c32d16e0))
+
+
+### Bug Fixes
+
+* update docblock for PersonCategory properties ([d5cf3b2](https://github.com/rectitude-open/filament-people/commit/d5cf3b235fb7c4abcd1430e1d46251d50b5be8c7))
+
 ## [1.8.1](https://github.com/rectitude-open/filament-people/compare/v1.8.0...v1.8.1) (2025-07-18)
 
 
