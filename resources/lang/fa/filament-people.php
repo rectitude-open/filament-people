@@ -35,7 +35,8 @@ return [
             'status_draft' => 'پیش‌نویس',
         ],
         'info' => [
-            'select_categories' => 'انتخاب دسته‌بندی‌ها',
+            'select_categories' => 'دسته‌بندی‌ها را انتخاب کنید',
+            'duplicate_selected' => 'تکرار موارد انتخاب شده',
         ],
     ],
     'person_category' => [

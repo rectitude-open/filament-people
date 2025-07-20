@@ -36,6 +36,7 @@ return [
         ],
         'info' => [
             'select_categories' => 'Ընտրեք կատեգորիաներ',
+            'duplicate_selected' => 'Կրկնօրինակել ընտրվածները',
         ],
     ],
     'person_category' => [

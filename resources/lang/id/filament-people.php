@@ -36,6 +36,7 @@ return [
         ],
         'info' => [
             'select_categories' => 'Pilih Kategori',
+            'duplicate_selected' => 'Duplikat yang dipilih',
         ],
     ],
     'person_category' => [

@@ -36,6 +36,7 @@ return [
         ],
         'info' => [
             'select_categories' => '카테고리 선택',
+            'duplicate_selected' => '선택 항목 복제',
         ],
     ],
     'person_category' => [

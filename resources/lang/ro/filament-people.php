@@ -35,7 +35,8 @@ return [
             'status_draft' => 'Ciornă',
         ],
         'info' => [
-            'select_categories' => 'Selectați categorii',
+            'select_categories' => 'Selectați categoriile',
+            'duplicate_selected' => 'Duplică selecția',
         ],
     ],
     'person_category' => [

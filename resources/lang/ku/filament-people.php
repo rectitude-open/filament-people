@@ -36,6 +36,7 @@ return [
         ],
         'info' => [
             'select_categories' => 'Kategorî Hilbijêre',
+            'duplicate_selected' => 'Dublîkasyonê yên hilbijartî',
         ],
     ],
     'person_category' => [

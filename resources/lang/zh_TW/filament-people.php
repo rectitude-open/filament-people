@@ -35,7 +35,8 @@ return [
             'status_draft' => '草稿',
         ],
         'info' => [
-            'select_categories' => '選擇類別',
+            'select_categories' => '選擇分類',
+            'duplicate_selected' => '複製所選項目',
         ],
     ],
     'person_category' => [

@@ -36,6 +36,7 @@ return [
         ],
         'info' => [
             'select_categories' => 'اختر الفئات',
+            'duplicate_selected' => 'تكرار المحدد',
         ],
     ],
     'person_category' => [

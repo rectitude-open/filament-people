@@ -36,6 +36,7 @@ return [
         ],
         'info' => [
             'select_categories' => 'カテゴリを選択',
+            'duplicate_selected' => '選択したものを複製',
         ],
     ],
     'person_category' => [

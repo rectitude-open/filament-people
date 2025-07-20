@@ -36,6 +36,7 @@ return [
         ],
         'info' => [
             'select_categories' => 'Chọn danh mục',
+            'duplicate_selected' => 'Nhân bản đã chọn',
         ],
     ],
     'person_category' => [

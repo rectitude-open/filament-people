@@ -36,6 +36,7 @@ return [
         ],
         'info' => [
             'select_categories' => 'Выберите категории',
+            'duplicate_selected' => 'Дублировать выбранные',
         ],
     ],
     'person_category' => [

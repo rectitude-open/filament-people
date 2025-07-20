@@ -36,6 +36,7 @@ return [
         ],
         'info' => [
             'select_categories' => 'ជ្រើសប្រភេទ',
+            'duplicate_selected' => 'ចម្លងជម្រើស',
         ],
     ],
     'person_category' => [

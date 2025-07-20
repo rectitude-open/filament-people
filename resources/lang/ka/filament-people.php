@@ -36,6 +36,7 @@ return [
         ],
         'info' => [
             'select_categories' => 'აირჩიეთ კატეგორიები',
+            'duplicate_selected' => 'დუბლირება არჩეული',
         ],
     ],
     'person_category' => [

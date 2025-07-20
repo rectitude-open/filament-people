@@ -36,6 +36,7 @@ return [
         ],
         'info' => [
             'select_categories' => 'Izvēlieties kategorijas',
+            'duplicate_selected' => 'Dublēt izvēlētos',
         ],
     ],
     'person_category' => [

@@ -36,6 +36,7 @@ return [
         ],
         'info' => [
             'select_categories' => 'Vyberte kategórie',
+            'duplicate_selected' => 'Duplikovať vybrané',
         ],
     ],
     'person_category' => [

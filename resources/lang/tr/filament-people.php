@@ -36,6 +36,7 @@ return [
         ],
         'info' => [
             'select_categories' => 'Kategorileri seçin',
+            'duplicate_selected' => 'Seçilenleri çoğalt',
         ],
     ],
     'person_category' => [

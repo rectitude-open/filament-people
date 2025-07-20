@@ -36,6 +36,7 @@ return [
         ],
         'info' => [
             'select_categories' => '选择类别',
+            'duplicate_selected' => '复制所选项',
         ],
     ],
     'person_category' => [

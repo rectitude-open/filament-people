@@ -36,6 +36,7 @@ return [
         ],
         'info' => [
             'select_categories' => 'پۆل هەڵبژێرە',
+            'duplicate_selected' => 'دووبارەکردنی هەڵبژێراوەکان',
         ],
     ],
     'person_category' => [

@@ -36,6 +36,7 @@ return [
         ],
         'info' => [
             'select_categories' => 'Zgjidh kategoritë',
+            'duplicate_selected' => 'Dupliko të zgjedhurat',
         ],
     ],
     'person_category' => [
