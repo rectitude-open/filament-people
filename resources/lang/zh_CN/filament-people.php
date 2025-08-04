@@ -10,6 +10,9 @@ return [
         ],
     ],
     'person' => [
+        'resource' => [
+            'label' => '人员',
+        ],
         'nav' => [
             'label' => '人员',
             'group' => '',
@@ -40,12 +43,15 @@ return [
         ],
     ],
     'person_category' => [
+        'resource' => [
+            'label' => '人员类别',
+        ],
         'nav' => [
             'label' => '人员类别',
             'group' => '',
         ],
         'field' => [
-            'title' => '头衔',
+            'title' => '标题',
         ],
     ],
 ];

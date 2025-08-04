@@ -10,16 +10,19 @@ return [
         ],
     ],
     'person' => [
+        'resource' => [
+            'label' => 'Osoby',
+        ],
         'nav' => [
             'label' => 'Osoby',
             'group' => '',
         ],
         'field' => [
             'name' => 'Meno',
-            'title' => 'Titul',
+            'title' => 'Pozícia',
             'email' => 'Email',
             'phone' => 'Telefón',
-            'bio' => 'Životopis',
+            'bio' => 'Biografia',
             'tagline' => 'Slogan',
             'sidebar' => 'Bočný panel',
             'taxonomy' => 'Taxonómia',
@@ -40,6 +43,9 @@ return [
         ],
     ],
     'person_category' => [
+        'resource' => [
+            'label' => 'Kategórie osôb',
+        ],
         'nav' => [
             'label' => 'Kategórie osôb',
             'group' => '',

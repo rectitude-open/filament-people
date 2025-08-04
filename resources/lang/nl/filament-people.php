@@ -5,18 +5,21 @@ declare(strict_types=1);
 return [
     'cluster' => [
         'nav' => [
-            'label' => 'Mensen',
+            'label' => 'Personen',
             'group' => 'Inhoud',
         ],
     ],
     'person' => [
+        'resource' => [
+            'label' => 'Personen',
+        ],
         'nav' => [
-            'label' => 'Mensen',
+            'label' => 'Personen',
             'group' => '',
         ],
         'field' => [
             'name' => 'Naam',
-            'title' => 'Titel',
+            'title' => 'Functie',
             'email' => 'E-mail',
             'phone' => 'Telefoon',
             'bio' => 'Biografie',
@@ -40,6 +43,9 @@ return [
         ],
     ],
     'person_category' => [
+        'resource' => [
+            'label' => 'Persoonscategorieën',
+        ],
         'nav' => [
             'label' => 'Persoonscategorieën',
             'group' => '',

@@ -10,13 +10,16 @@ return [
         ],
     ],
     'person' => [
+        'resource' => [
+            'label' => 'Osoby',
+        ],
         'nav' => [
             'label' => 'Osoby',
             'group' => '',
         ],
         'field' => [
             'name' => 'Imię',
-            'title' => 'Tytuł',
+            'title' => 'Stanowisko',
             'email' => 'Email',
             'phone' => 'Telefon',
             'bio' => 'Biografia',
@@ -24,7 +27,7 @@ return [
             'sidebar' => 'Panel boczny',
             'taxonomy' => 'Taksonomia',
             'categories' => 'Kategorie',
-            'avatar' => 'Awatar',
+            'avatar' => 'Avatar',
             'seo' => 'SEO',
             'meta' => 'Meta',
             'slug' => 'Slug',
@@ -36,10 +39,13 @@ return [
         ],
         'info' => [
             'select_categories' => 'Wybierz kategorie',
-            'duplicate_selected' => 'Duplikuj zaznaczone',
+            'duplicate_selected' => 'Duplikuj wybrane',
         ],
     ],
     'person_category' => [
+        'resource' => [
+            'label' => 'Kategorie osób',
+        ],
         'nav' => [
             'label' => 'Kategorie osób',
             'group' => '',

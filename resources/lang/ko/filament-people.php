@@ -10,6 +10,9 @@ return [
         ],
     ],
     'person' => [
+        'resource' => [
+            'label' => '사람',
+        ],
         'nav' => [
             'label' => '사람',
             'group' => '',
@@ -40,6 +43,9 @@ return [
         ],
     ],
     'person_category' => [
+        'resource' => [
+            'label' => '사람 카테고리',
+        ],
         'nav' => [
             'label' => '사람 카테고리',
             'group' => '',

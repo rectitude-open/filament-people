@@ -10,13 +10,16 @@ return [
         ],
     ],
     'person' => [
+        'resource' => [
+            'label' => 'Personnes',
+        ],
         'nav' => [
             'label' => 'Personnes',
             'group' => '',
         ],
         'field' => [
             'name' => 'Nom',
-            'title' => 'Titre',
+            'title' => 'Fonction',
             'email' => 'Email',
             'phone' => 'Téléphone',
             'bio' => 'Biographie',
@@ -40,6 +43,9 @@ return [
         ],
     ],
     'person_category' => [
+        'resource' => [
+            'label' => 'Catégories de personnes',
+        ],
         'nav' => [
             'label' => 'Catégories de personnes',
             'group' => '',

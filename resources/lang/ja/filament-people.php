@@ -10,13 +10,16 @@ return [
         ],
     ],
     'person' => [
+        'resource' => [
+            'label' => '人物',
+        ],
         'nav' => [
             'label' => '人物',
             'group' => '',
         ],
         'field' => [
             'name' => '名前',
-            'title' => '肩書き',
+            'title' => '役職',
             'email' => 'メール',
             'phone' => '電話',
             'bio' => '略歴',
@@ -36,10 +39,13 @@ return [
         ],
         'info' => [
             'select_categories' => 'カテゴリを選択',
-            'duplicate_selected' => '選択したものを複製',
+            'duplicate_selected' => '選択項目を複製',
         ],
     ],
     'person_category' => [
+        'resource' => [
+            'label' => '人物カテゴリ',
+        ],
         'nav' => [
             'label' => '人物カテゴリ',
             'group' => '',

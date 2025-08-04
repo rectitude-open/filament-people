@@ -10,13 +10,16 @@ return [
         ],
     ],
     'person' => [
+        'resource' => [
+            'label' => 'Kesên',
+        ],
         'nav' => [
             'label' => 'Kesên',
             'group' => '',
         ],
         'field' => [
             'name' => 'Nav',
-            'title' => 'Sernav',
+            'title' => 'Navê kar',
             'email' => 'Email',
             'phone' => 'Telefon',
             'bio' => 'Bio',
@@ -28,20 +31,23 @@ return [
             'seo' => 'SEO',
             'meta' => 'Meta',
             'slug' => 'Slug',
-            'display_order' => 'Rêza Nîşandanê',
-            'created_at' => 'Dîrokê Çêkirinê',
+            'display_order' => 'Rêza nîşandanê',
+            'created_at' => 'Dîrokê çêkirinê',
             'status' => 'Rewş',
-            'status_published' => 'Weşandî',
-            'status_draft' => 'Qebûlkirî',
+            'status_published' => 'Weşandin',
+            'status_draft' => 'Pêşnivîs',
         ],
         'info' => [
-            'select_categories' => 'Kategorî Hilbijêre',
-            'duplicate_selected' => 'Dublîkasyonê yên hilbijartî',
+            'select_categories' => 'Kategorî hilbijêre',
+            'duplicate_selected' => 'Yên hilbijartî dubare bike',
         ],
     ],
     'person_category' => [
+        'resource' => [
+            'label' => 'Kategoriyên kesan',
+        ],
         'nav' => [
-            'label' => 'Kategoriyên Kes',
+            'label' => 'Kategoriyên kesan',
             'group' => '',
         ],
         'field' => [

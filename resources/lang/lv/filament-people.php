@@ -10,13 +10,16 @@ return [
         ],
     ],
     'person' => [
+        'resource' => [
+            'label' => 'Cilvēki',
+        ],
         'nav' => [
             'label' => 'Cilvēki',
             'group' => '',
         ],
         'field' => [
             'name' => 'Vārds',
-            'title' => 'Tituls',
+            'title' => 'Amats',
             'email' => 'E-pasts',
             'phone' => 'Tālrunis',
             'bio' => 'Biogrāfija',
@@ -40,12 +43,15 @@ return [
         ],
     ],
     'person_category' => [
+        'resource' => [
+            'label' => 'Cilvēku kategorijas',
+        ],
         'nav' => [
             'label' => 'Cilvēku kategorijas',
             'group' => '',
         ],
         'field' => [
-            'title' => 'Nosaukums',
+            'title' => 'Virsraksts',
         ],
     ],
 ];

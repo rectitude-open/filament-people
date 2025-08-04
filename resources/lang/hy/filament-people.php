@@ -10,13 +10,16 @@ return [
         ],
     ],
     'person' => [
+        'resource' => [
+            'label' => 'Մարդիկ',
+        ],
         'nav' => [
             'label' => 'Մարդիկ',
             'group' => '',
         ],
         'field' => [
             'name' => 'Անուն',
-            'title' => 'Վերնագիր',
+            'title' => 'Պաշտոն',
             'email' => 'Էլ. փոստ',
             'phone' => 'Հեռախոս',
             'bio' => 'Կենսագրություն',
@@ -35,11 +38,14 @@ return [
             'status_draft' => 'Սևագիր',
         ],
         'info' => [
-            'select_categories' => 'Ընտրեք կատեգորիաներ',
-            'duplicate_selected' => 'Կրկնօրինակել ընտրվածները',
+            'select_categories' => 'Ընտրել կատեգորիաները',
+            'duplicate_selected' => 'Կրկնել ընտրվածները',
         ],
     ],
     'person_category' => [
+        'resource' => [
+            'label' => 'Մարդկանց կատեգորիաներ',
+        ],
         'nav' => [
             'label' => 'Մարդկանց կատեգորիաներ',
             'group' => '',

@@ -10,6 +10,9 @@ return [
         ],
     ],
     'person' => [
+        'resource' => [
+            'label' => '人員',
+        ],
         'nav' => [
             'label' => '人員',
             'group' => '',
@@ -27,7 +30,7 @@ return [
             'avatar' => '頭像',
             'seo' => 'SEO',
             'meta' => 'Meta',
-            'slug' => '別名',
+            'slug' => 'Slug',
             'display_order' => '顯示順序',
             'created_at' => '建立時間',
             'status' => '狀態',
@@ -35,17 +38,20 @@ return [
             'status_draft' => '草稿',
         ],
         'info' => [
-            'select_categories' => '選擇分類',
-            'duplicate_selected' => '複製所選項目',
+            'select_categories' => '選擇類別',
+            'duplicate_selected' => '複製所選項',
         ],
     ],
     'person_category' => [
+        'resource' => [
+            'label' => '人員類別',
+        ],
         'nav' => [
             'label' => '人員類別',
             'group' => '',
         ],
         'field' => [
-            'title' => '職稱',
+            'title' => '標題',
         ],
     ],
 ];

@@ -10,13 +10,16 @@ return [
         ],
     ],
     'person' => [
+        'resource' => [
+            'label' => 'პირები',
+        ],
         'nav' => [
             'label' => 'პირები',
             'group' => '',
         ],
         'field' => [
             'name' => 'სახელი',
-            'title' => 'სათაური',
+            'title' => 'თანამდებობა',
             'email' => 'ელ.ფოსტა',
             'phone' => 'ტელეფონი',
             'bio' => 'ბიოგრაფია',
@@ -40,6 +43,9 @@ return [
         ],
     ],
     'person_category' => [
+        'resource' => [
+            'label' => 'პირთა კატეგორიები',
+        ],
         'nav' => [
             'label' => 'პირთა კატეგორიები',
             'group' => '',

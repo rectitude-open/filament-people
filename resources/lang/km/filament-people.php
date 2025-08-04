@@ -10,6 +10,9 @@ return [
         ],
     ],
     'person' => [
+        'resource' => [
+            'label' => 'មនុស្ស',
+        ],
         'nav' => [
             'label' => 'មនុស្ស',
             'group' => '',
@@ -22,7 +25,7 @@ return [
             'bio' => 'ប្រវត្តិរូប',
             'tagline' => 'ស្លោក',
             'sidebar' => 'របារចំហៀង',
-            'taxonomy' => 'តាក់សូណូមី',
+            'taxonomy' => 'ចំណាត់ថ្នាក់',
             'categories' => 'ប្រភេទ',
             'avatar' => 'រូបភាព',
             'seo' => 'SEO',
@@ -31,15 +34,18 @@ return [
             'display_order' => 'លំដាប់បង្ហាញ',
             'created_at' => 'ថ្ងៃបង្កើត',
             'status' => 'ស្ថានភាព',
-            'status_published' => 'បានបោះពុម្ពផ្សាយ',
+            'status_published' => 'បានបង្ហោះ',
             'status_draft' => 'សេចក្តីព្រាង',
         ],
         'info' => [
             'select_categories' => 'ជ្រើសប្រភេទ',
-            'duplicate_selected' => 'ចម្លងជម្រើស',
+            'duplicate_selected' => 'ចម្លងដែលបានជ្រើស',
         ],
     ],
     'person_category' => [
+        'resource' => [
+            'label' => 'ប្រភេទមនុស្ស',
+        ],
         'nav' => [
             'label' => 'ប្រភេទមនុស្ស',
             'group' => '',

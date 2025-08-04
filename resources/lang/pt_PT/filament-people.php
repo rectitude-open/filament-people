@@ -10,13 +10,16 @@ return [
         ],
     ],
     'person' => [
+        'resource' => [
+            'label' => 'Pessoas',
+        ],
         'nav' => [
             'label' => 'Pessoas',
             'group' => '',
         ],
         'field' => [
             'name' => 'Nome',
-            'title' => 'Título',
+            'title' => 'Cargo',
             'email' => 'Email',
             'phone' => 'Telefone',
             'bio' => 'Biografia',
@@ -30,7 +33,7 @@ return [
             'slug' => 'Slug',
             'display_order' => 'Ordem de exibição',
             'created_at' => 'Criado em',
-            'status' => 'Estado',
+            'status' => 'Status',
             'status_published' => 'Publicado',
             'status_draft' => 'Rascunho',
         ],
@@ -40,6 +43,9 @@ return [
         ],
     ],
     'person_category' => [
+        'resource' => [
+            'label' => 'Categorias de pessoas',
+        ],
         'nav' => [
             'label' => 'Categorias de pessoas',
             'group' => '',

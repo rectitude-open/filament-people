@@ -10,13 +10,16 @@ return [
         ],
     ],
     'person' => [
+        'resource' => [
+            'label' => 'Persoane',
+        ],
         'nav' => [
             'label' => 'Persoane',
             'group' => '',
         ],
         'field' => [
             'name' => 'Nume',
-            'title' => 'Titlu',
+            'title' => 'Funcție',
             'email' => 'Email',
             'phone' => 'Telefon',
             'bio' => 'Biografie',
@@ -35,11 +38,14 @@ return [
             'status_draft' => 'Ciornă',
         ],
         'info' => [
-            'select_categories' => 'Selectați categoriile',
+            'select_categories' => 'Selectați categorii',
             'duplicate_selected' => 'Duplică selecția',
         ],
     ],
     'person_category' => [
+        'resource' => [
+            'label' => 'Categorii de persoane',
+        ],
         'nav' => [
             'label' => 'Categorii de persoane',
             'group' => '',

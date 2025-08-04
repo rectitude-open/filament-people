@@ -6,21 +6,24 @@ return [
     'cluster' => [
         'nav' => [
             'label' => 'Persona',
-            'group' => 'Përmbajtja',
+            'group' => 'Përmbajtje',
         ],
     ],
     'person' => [
+        'resource' => [
+            'label' => 'Persona',
+        ],
         'nav' => [
             'label' => 'Persona',
             'group' => '',
         ],
         'field' => [
             'name' => 'Emri',
-            'title' => 'Titulli',
+            'title' => 'Pozicioni',
             'email' => 'Email',
             'phone' => 'Telefoni',
             'bio' => 'Biografia',
-            'tagline' => 'Moto',
+            'tagline' => 'Motoja',
             'sidebar' => 'Paneli anësor',
             'taxonomy' => 'Taksonomia',
             'categories' => 'Kategoritë',
@@ -40,6 +43,9 @@ return [
         ],
     ],
     'person_category' => [
+        'resource' => [
+            'label' => 'Kategoritë e personave',
+        ],
         'nav' => [
             'label' => 'Kategoritë e personave',
             'group' => '',

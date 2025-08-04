@@ -10,24 +10,27 @@ return [
         ],
     ],
     'person' => [
+        'resource' => [
+            'label' => 'افراد',
+        ],
         'nav' => [
             'label' => 'افراد',
             'group' => '',
         ],
         'field' => [
             'name' => 'نام',
-            'title' => 'عنوان',
+            'title' => 'سمت',
             'email' => 'ایمیل',
             'phone' => 'تلفن',
             'bio' => 'بیوگرافی',
             'tagline' => 'شعار',
-            'sidebar' => 'نوار کناری',
+            'sidebar' => 'سایدبار',
             'taxonomy' => 'رده‌بندی',
             'categories' => 'دسته‌بندی‌ها',
             'avatar' => 'آواتار',
             'seo' => 'سئو',
             'meta' => 'متا',
-            'slug' => 'اسلاگ',
+            'slug' => 'نامک',
             'display_order' => 'ترتیب نمایش',
             'created_at' => 'تاریخ ایجاد',
             'status' => 'وضعیت',
@@ -35,11 +38,14 @@ return [
             'status_draft' => 'پیش‌نویس',
         ],
         'info' => [
-            'select_categories' => 'دسته‌بندی‌ها را انتخاب کنید',
-            'duplicate_selected' => 'تکرار موارد انتخاب شده',
+            'select_categories' => 'انتخاب دسته‌بندی‌ها',
+            'duplicate_selected' => 'تکرار انتخاب‌شده‌ها',
         ],
     ],
     'person_category' => [
+        'resource' => [
+            'label' => 'دسته‌بندی افراد',
+        ],
         'nav' => [
             'label' => 'دسته‌بندی افراد',
             'group' => '',

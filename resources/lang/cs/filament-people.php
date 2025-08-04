@@ -10,6 +10,9 @@ return [
         ],
     ],
     'person' => [
+        'resource' => [
+            'label' => 'Lidé',
+        ],
         'nav' => [
             'label' => 'Lidé',
             'group' => '',
@@ -19,7 +22,7 @@ return [
             'title' => 'Titul',
             'email' => 'Email',
             'phone' => 'Telefon',
-            'bio' => 'Životopis',
+            'bio' => 'Biografie',
             'tagline' => 'Slogan',
             'sidebar' => 'Postranní panel',
             'taxonomy' => 'Taxonomie',
@@ -40,6 +43,9 @@ return [
         ],
     ],
     'person_category' => [
+        'resource' => [
+            'label' => 'Kategorie osob',
+        ],
         'nav' => [
             'label' => 'Kategorie osob',
             'group' => '',

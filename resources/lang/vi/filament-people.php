@@ -10,13 +10,16 @@ return [
         ],
     ],
     'person' => [
+        'resource' => [
+            'label' => 'Người',
+        ],
         'nav' => [
             'label' => 'Người',
             'group' => '',
         ],
         'field' => [
             'name' => 'Tên',
-            'title' => 'Chức danh',
+            'title' => 'Chức vụ',
             'email' => 'Email',
             'phone' => 'Điện thoại',
             'bio' => 'Tiểu sử',
@@ -36,16 +39,19 @@ return [
         ],
         'info' => [
             'select_categories' => 'Chọn danh mục',
-            'duplicate_selected' => 'Nhân bản đã chọn',
+            'duplicate_selected' => 'Nhân bản mục đã chọn',
         ],
     ],
     'person_category' => [
+        'resource' => [
+            'label' => 'Danh mục người',
+        ],
         'nav' => [
             'label' => 'Danh mục người',
             'group' => '',
         ],
         'field' => [
-            'title' => 'Chức danh',
+            'title' => 'Tiêu đề',
         ],
     ],
 ];

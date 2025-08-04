@@ -10,17 +10,20 @@ return [
         ],
     ],
     'person' => [
+        'resource' => [
+            'label' => 'Orang',
+        ],
         'nav' => [
             'label' => 'Orang',
             'group' => '',
         ],
         'field' => [
             'name' => 'Nama',
-            'title' => 'Judul',
+            'title' => 'Jabatan',
             'email' => 'Email',
             'phone' => 'Telepon',
             'bio' => 'Biografi',
-            'tagline' => 'Tagline',
+            'tagline' => 'Slogan',
             'sidebar' => 'Sidebar',
             'taxonomy' => 'Taksonomi',
             'categories' => 'Kategori',
@@ -36,10 +39,13 @@ return [
         ],
         'info' => [
             'select_categories' => 'Pilih Kategori',
-            'duplicate_selected' => 'Duplikat yang dipilih',
+            'duplicate_selected' => 'Duplikat yang Dipilih',
         ],
     ],
     'person_category' => [
+        'resource' => [
+            'label' => 'Kategori Orang',
+        ],
         'nav' => [
             'label' => 'Kategori Orang',
             'group' => '',

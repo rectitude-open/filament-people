@@ -10,6 +10,9 @@ return [
         ],
     ],
     'person' => [
+        'resource' => [
+            'label' => 'کەسەکان',
+        ],
         'nav' => [
             'label' => 'کەسەکان',
             'group' => '',
@@ -18,16 +21,16 @@ return [
             'name' => 'ناو',
             'title' => 'ناونیشان',
             'email' => 'ئیمەیل',
-            'phone' => 'ژمارەی تەلەفون',
-            'bio' => 'ژێرنووس',
+            'phone' => 'تەلەفۆن',
+            'bio' => 'زانیاری',
             'tagline' => 'شعار',
-            'sidebar' => 'لاپەڕەی لایەن',
-            'taxonomy' => 'تاکسۆنۆمی',
+            'sidebar' => 'سایدبار',
+            'taxonomy' => 'پۆل',
             'categories' => 'پۆلەکان',
-            'avatar' => 'وێنەی کەس',
+            'avatar' => 'وێنە',
             'seo' => 'SEO',
             'meta' => 'مێتا',
-            'slug' => 'سلەگ',
+            'slug' => 'ناو',
             'display_order' => 'ڕیزکردنی پیشان',
             'created_at' => 'دروستکراوە',
             'status' => 'دۆخ',
@@ -35,11 +38,14 @@ return [
             'status_draft' => 'پڕۆژە',
         ],
         'info' => [
-            'select_categories' => 'پۆل هەڵبژێرە',
-            'duplicate_selected' => 'دووبارەکردنی هەڵبژێراوەکان',
+            'select_categories' => 'هەڵبژاردنی پۆلەکان',
+            'duplicate_selected' => 'دووبارەکردنی هەڵبژاردە',
         ],
     ],
     'person_category' => [
+        'resource' => [
+            'label' => 'پۆلەکانی کەس',
+        ],
         'nav' => [
             'label' => 'پۆلەکانی کەس',
             'group' => '',

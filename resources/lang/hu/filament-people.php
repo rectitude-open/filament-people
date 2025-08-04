@@ -10,17 +10,20 @@ return [
         ],
     ],
     'person' => [
+        'resource' => [
+            'label' => 'Személyek',
+        ],
         'nav' => [
             'label' => 'Személyek',
             'group' => '',
         ],
         'field' => [
             'name' => 'Név',
-            'title' => 'Titulus',
+            'title' => 'Beosztás',
             'email' => 'Email',
             'phone' => 'Telefon',
             'bio' => 'Bemutatkozás',
-            'tagline' => 'Jelmondat',
+            'tagline' => 'Szlogen',
             'sidebar' => 'Oldalsáv',
             'taxonomy' => 'Taxonómia',
             'categories' => 'Kategóriák',
@@ -36,12 +39,15 @@ return [
         ],
         'info' => [
             'select_categories' => 'Kategóriák kiválasztása',
-            'duplicate_selected' => 'Kiválasztottak duplikálása',
+            'duplicate_selected' => 'Kijelöltek másolása',
         ],
     ],
     'person_category' => [
+        'resource' => [
+            'label' => 'Személy kategóriák',
+        ],
         'nav' => [
-            'label' => 'Személykategóriák',
+            'label' => 'Személy kategóriák',
             'group' => '',
         ],
         'field' => [

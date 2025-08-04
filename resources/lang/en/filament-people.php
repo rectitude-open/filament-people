@@ -10,6 +10,9 @@ return [
         ],
     ],
     'person' => [
+        'resource' => [
+            'label' => 'People',
+        ],
         'nav' => [
             'label' => 'People',
             'group' => '',
@@ -40,6 +43,9 @@ return [
         ],
     ],
     'person_category' => [
+        'resource' => [
+            'label' => 'Person Categories',
+        ],
         'nav' => [
             'label' => 'Person Categories',
             'group' => '',
