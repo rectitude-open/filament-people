@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace RectitudeOpen\FilamentPeople\Filament\Pages;
 
 use Filament\Forms\Components\TextInput;
+use Illuminate\Contracts\Support\Htmlable;
 use Illuminate\Database\Eloquent\Model;
 use RectitudeOpen\FilamentPeople\Filament\Clusters\PeopleCluster;
 use RectitudeOpen\FilamentPeople\Models\PersonCategory as TreePageModel;
@@ -41,10 +42,18 @@ class PersonCategory extends BasePage
         return static::$model ?? config('filament-people.person_category.model', TreePageModel::class);
     }
 
+    public function getTitle(): string | Htmlable
+    {
+        return __('filament-people::filament-people.person_category.resource.label');
+    }
+
     protected function getActions(): array
     {
         return [
-            $this->getCreateAction()->icon('heroicon-o-plus'),
+            $this->getCreateAction()
+                ->modalHeading(fn (): string => __('filament-actions::create.single.modal.heading', ['label' => __('filament-people::filament-people.person_category.resource.label')]))
+                ->label(__('filament-people::filament-people.person_category.resource.label'))
+                ->icon('heroicon-o-plus'),
         ];
     }
 

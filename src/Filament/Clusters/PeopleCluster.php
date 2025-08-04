@@ -28,4 +28,9 @@ class PeopleCluster extends Cluster
     {
         return __('filament-people::filament-people.cluster.nav.group');
     }
+
+    public static function getClusterBreadcrumb(): string
+    {
+        return __('filament-people::filament-people.cluster.nav.label');
+    }
 }
