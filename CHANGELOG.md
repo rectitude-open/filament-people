@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.10.0](https://github.com/rectitude-open/filament-people/compare/v1.9.0...v1.10.0) (2025-08-04)
+
+
+### Features
+
+* add breadcrumb and title localization for PeopleCluster and PersonCategory ([5528d89](https://github.com/rectitude-open/filament-people/commit/5528d89526a52fc5e1008b408b745fe203aad224))
+
 ## [1.9.0](https://github.com/rectitude-open/filament-people/compare/v1.8.1...v1.9.0) (2025-07-20)
 
 
