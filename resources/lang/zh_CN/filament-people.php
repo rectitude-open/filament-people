@@ -25,8 +25,8 @@ return [
             'bio' => '简介',
             'tagline' => '标语',
             'sidebar' => '侧边栏',
-            'taxonomy' => '分类',
-            'categories' => '类别',
+            'taxonomy' => '分类法',
+            'categories' => '分类',
             'avatar' => '头像',
             'seo' => 'SEO',
             'meta' => '元数据',
@@ -38,16 +38,16 @@ return [
             'status_draft' => '草稿',
         ],
         'info' => [
-            'select_categories' => '选择类别',
+            'select_categories' => '选择分类',
             'duplicate_selected' => '复制所选项',
         ],
     ],
     'person_category' => [
         'resource' => [
-            'label' => '人员类别',
+            'label' => '人员分类',
         ],
         'nav' => [
-            'label' => '人员类别',
+            'label' => '人员分类',
             'group' => '',
         ],
         'field' => [

@@ -25,8 +25,8 @@ return [
             'bio' => '簡介',
             'tagline' => '標語',
             'sidebar' => '側邊欄',
-            'taxonomy' => '分類',
-            'categories' => '類別',
+            'taxonomy' => '分類法',
+            'categories' => '分類',
             'avatar' => '頭像',
             'seo' => 'SEO',
             'meta' => 'Meta',
@@ -38,16 +38,16 @@ return [
             'status_draft' => '草稿',
         ],
         'info' => [
-            'select_categories' => '選擇類別',
+            'select_categories' => '選擇分類',
             'duplicate_selected' => '複製所選項',
         ],
     ],
     'person_category' => [
         'resource' => [
-            'label' => '人員類別',
+            'label' => '人員分類',
         ],
         'nav' => [
-            'label' => '人員類別',
+            'label' => '人員分類',
             'group' => '',
         ],
         'field' => [
