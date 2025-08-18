@@ -21,11 +21,11 @@ class PersonFactory extends Factory
         return [
             'name' => $this->faker->name(),
             'title' => $this->faker->jobTitle(),
-            'tagline' => $this->faker->realText(1000),
+            'tagline' => $this->faker->realText(700),
             'email' => $this->faker->unique()->safeEmail(),
             'phone' => $this->faker->phoneNumber(),
             'bio' => $this->faker->paragraph(),
-            'sidebar' => $this->faker->realText(1000),
+            'sidebar' => $this->faker->realText(700),
             'is_published' => $this->faker->boolean(),
             'display_order' => $this->faker->numberBetween(0, 100),
             'created_at' => $this->faker->dateTimeThisYear(),
