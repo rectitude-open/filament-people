@@ -1,5 +1,14 @@
 # Changelog
 
+## [1.10.1](https://github.com/rectitude-open/filament-people/compare/v1.10.0...v1.10.1) (2025-08-19)
+
+
+### Bug Fixes
+
+* correct wrong file name ([09d02aa](https://github.com/rectitude-open/filament-people/commit/09d02aa8410ed286fee0f60e54f792ebae23173b))
+* reduce tagline and sidebar text length in PersonFactory ([4601fa2](https://github.com/rectitude-open/filament-people/commit/4601fa2ff67776fc697101ee88534c842d9972ec))
+* update Chinese translations for taxonomy and categories in filament-people ([c93b39c](https://github.com/rectitude-open/filament-people/commit/c93b39ceb29c86ea1fb42d0cfd5617e5c3675200))
+
 ## [1.10.0](https://github.com/rectitude-open/filament-people/compare/v1.9.0...v1.10.0) (2025-08-04)
 
 
