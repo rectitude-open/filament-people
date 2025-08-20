@@ -21,7 +21,7 @@ class PersonFactory extends Factory
         return [
             'name' => $this->faker->name(),
             'title' => $this->faker->jobTitle(),
-            'tagline' => $this->faker->realText(700),
+            'tagline' => $this->faker->realText(255),
             'email' => $this->faker->unique()->safeEmail(),
             'phone' => $this->faker->phoneNumber(),
             'bio' => $this->faker->paragraph(),
