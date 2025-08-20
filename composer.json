@@ -1,9 +1,10 @@
 {
     "name": "rectitude-open/filament-people",
-    "description": "This is my package filament-people",
+    "description": "A Filament plugin for managing member profiles.",
     "keywords": [
-        "filament",
-        "filament plugin"
+        "member management",
+        "filament plugin",
+        "laravel package"
     ],
     "homepage": "https://github.com/rectitude-open/filament-people",
     "support": {
