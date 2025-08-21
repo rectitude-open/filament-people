@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.10.2](https://github.com/rectitude-open/filament-people/compare/v1.10.1...v1.10.2) (2025-08-21)
+
+
+### Bug Fixes
+
+* reduce tagline text length in PersonFactory ([0f03f52](https://github.com/rectitude-open/filament-people/commit/0f03f52abee378ec2c0a5298f70d580a5245d35f))
+* update README and composer.json for improved clarity and accuracy ([c47db31](https://github.com/rectitude-open/filament-people/commit/c47db3179d3f21aea35c39d8760175c2f347f7ac))
+
 ## [1.10.1](https://github.com/rectitude-open/filament-people/compare/v1.10.0...v1.10.1) (2025-08-19)
 
 
